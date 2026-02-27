@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     console.log('Revalidating content for type:', body._type)
 
     // Revalidate the cache tag for all CMS data
-    revalidateTag('cms-data')
+    await revalidateTag('cms-data')
 
     return NextResponse.json({
       status: 200,
